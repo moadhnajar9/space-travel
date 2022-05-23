@@ -1,13 +1,46 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap");
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .large--btn {
+    @apply uppercase font-serif tracking-wider text-3xl bg-white text-dark px-[2em]  grid aspect-square  place-items-center rounded-full relative after:transition-all after:duration-700 after:ease-in-out hover:after:scale-150 focus:after:scale-150 z-[1]   after:absolute after:z-[-1] after:h-full after:w-full after:aspect-square after:rounded-full after:bg-white/20 after:opacity-0 hover:after:opacity-100;
+  }
+  .underline-indicators > * {
+    @apply border-solid border-b-2  border-white/0 hover:border-white/25 after:border-white/25;
+  }
+  .underline-indicators > [ariaSelected="true"] {
+    @apply border-white text-white;
+  }
+  .dot-indicators > * {
+    @apply p-2 bg-gray-700 hover:bg-gray-500 focus:bg-gray-500  rounded-full;
+  }
+  .dot-indicators > [ariaSelected="true"] {
+    @apply bg-light;
+  }
+  .number-indicators > * {
+    @apply rounded-full w-14 h-14 border-solid border-light/10 border-[1px] flex justify-center items-center font-semibold font-ff-sans-normal text-lg text-light hover:border-light focus:border-light;
+  }
+  .number-indicators > [ariaSelected="true"] {
+    @apply bg-white text-gray-600;
+  }
+  .mobile__menu {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(81.5485px);
+    @apply uppercase min-h-[calc(100vh-70px)] flex flex-col absolute  right-0 pr-20 pl-8 translate-x-3/4 opacity-0 duration-1000 transition-all ease-in-out;
+  }
+  .mobile__menu--active {
+    @apply opacity-100 translate-x-0;
+  }
 }
+body {
+  font-family: "Barlow", sans-serif;
+}
+/* 
+--ff-sans-normal: 'Barlow', sans-serif;
+--ff-sans-cond:: 'Barlow Condensed', sans-serif;
+--ff-serif: 'Bellefair', serif;
+
+*/
