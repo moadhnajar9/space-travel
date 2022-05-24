@@ -5,8 +5,11 @@
 @tailwind utilities;
 
 @layer components {
+  body {
+    font-family: "Barlow", sans-serif;
+  }
   .large--btn {
-    @apply uppercase font-serif tracking-wider text-3xl bg-white text-dark px-[2em]  grid aspect-square  place-items-center rounded-full relative after:transition-all after:duration-700 after:ease-in-out hover:after:scale-150 focus:after:scale-150 z-[1]   after:absolute after:z-[-1] after:h-full after:w-full after:aspect-square after:rounded-full after:bg-white/20 after:opacity-0 hover:after:opacity-100;
+    @apply uppercase font-serif tracking-wider  bg-white text-dark  grid aspect-square  place-items-center rounded-full relative after:transition-all after:duration-500 after:ease-in-out hover:after:scale-150 focus:after:scale-150 z-[1]   after:absolute after:z-[-1] after:h-full after:w-full after:aspect-square after:rounded-full after:bg-white/20 after:opacity-0 hover:after:opacity-100;
   }
   .underline-indicators > * {
     @apply border-solid border-b-2  border-white/0 hover:border-white/25 after:border-white/25;
@@ -26,18 +29,30 @@
   .number-indicators > [ariaSelected="true"] {
     @apply bg-white text-gray-600;
   }
-  .mobile__menu {
+  .bg-menu {
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(81.5485px);
+  }
+  .mobile__menu {
     @apply uppercase min-h-[calc(100vh-70px)] flex flex-col absolute  right-0 pr-20 pl-8 translate-x-3/4 opacity-0 duration-1000 transition-all ease-in-out;
   }
   .mobile__menu--active {
-    @apply opacity-100 translate-x-0;
+    @apply opacity-80 translate-x-0;
+  }
+  .mobile__home--bg {
+    background-image: url("./assets/home/background-home-mobile.jpg");
+    background-position: bottom center;
+  }
+  .tablet__home--bg {
+    background-image: url("./assets/home/background-home-tablet.jpg");
+    background-position: center;
+  }
+  .desktop__home--bg {
+    background-image: url("./assets/home/background-home-desktop.jpg");
+    background-position: bottom center;
   }
 }
-body {
-  font-family: "Barlow", sans-serif;
-}
+
 /* 
 --ff-sans-normal: 'Barlow', sans-serif;
 --ff-sans-cond:: 'Barlow Condensed', sans-serif;

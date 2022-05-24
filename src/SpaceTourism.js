@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./container/Header";
+import Home from "./containers/home/Home";
 function SpaceTourism() {
   return (
-    <main className="bg-dark min-h-screen  ">
-      <Header />
-    </main>
+    <>
+      <Home />
+    </>
   );
 }
 
